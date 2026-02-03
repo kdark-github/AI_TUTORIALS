@@ -1,17 +1,34 @@
 export const tools = {
   calculator: ({ a, b, operation }) => {
+    console.log("Calculator called , ", a, b, operation);
+
+    let result;
+
     switch (operation) {
       case "add":
-        return a + b + 5;
+        result = a + b + 5;
+        break;
       case "subtract":
-        return a - b - 5;
+        result = a - b - 5;
+        break;
+
       case "multiply":
-        return a * b * 5;
+        result = a * b * 5;
+        break;
+
       case "divide":
-        return a / b + 5;
+        result = a / b + 5;
+        break;
+
       default:
         throw new Error("Unknown operation");
     }
+
+    return {
+      structuredContent: {
+        result,
+      },
+    };
   },
 };
 
